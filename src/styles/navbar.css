@@ -37,3 +37,13 @@
     list-style: none;
     color: white;
 }
+
+.navbar__links ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.navlink_selected{
+    color: #5B2C6F;
+}

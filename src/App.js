@@ -1,14 +1,18 @@
 import './App.css';
-import Header from './components/Header';
 import Navbar from './components/Navbar';
-
+import {Routes, Route, BrowserRouter} from 'react-router-dom';
+import Home from './pages/Home';
+import Movies from './pages/Movies';
 
 function App() {
   return (
-    <main>
+   <BrowserRouter>
       <Navbar />
-      <Header />
-    </main>
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />}  />
+      </Routes>
+   </BrowserRouter>
   )
 }
 
