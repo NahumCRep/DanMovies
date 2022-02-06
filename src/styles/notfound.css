@@ -1,0 +1,48 @@
+
+.notfound__container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notfound__content{
+    width: 80%;
+    height: 80%;
+    /* background-color: aliceblue; */
+    color: #EAECEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.notfound__content img{
+    width: 60%;
+    height: 60%;
+    /* filter: drop-shadow(0px 0px 20px #EAECEE); */
+}
+.notfound__content h1, h3{
+    opacity: 0.5;
+}
+
+.notfound__content a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.notfound__link-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.notfound__link-container:hover > svg{
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-5px);
+}
+

@@ -11,18 +11,8 @@ const Navbar = () => {
             </div>
             <div className='navbar__links'>
                 <ul>
-                    <li>
-                        <NavLink exact to="/" 
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#5B2C6F"
-                          }}
-                        >Inicio</NavLink>
-                    </li>
-                    <li><NavLink to="/movies" activeStyle={{
-                            fontWeight: "bold",
-                            color: "#5B2C6F"
-                          }} >Peliculas</NavLink></li>
+                    <li><NavLink to="/" >Inicio</NavLink></li>
+                    <li><NavLink to="/movies">Peliculas</NavLink></li>
                 </ul>
             </div>
         </nav>
