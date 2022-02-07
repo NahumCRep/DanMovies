@@ -9,22 +9,22 @@ import { MdArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 const moviesMockup = [
     {
-        id:'1',
+        id: '1',
         title: 'Avengers EndGame',
         banner: avengers
     },
     {
-        id:'2',
+        id: '2',
         title: 'Spiderman No Way Home',
         banner: spiderman
     },
     {
-        id:'3',
+        id: '3',
         title: 'Harry Potter Reliquias del Muerte Parte 2',
         banner: harry
     },
     {
-        id:'4',
+        id: '4',
         title: 'Dune',
         banner: dune
     },
@@ -44,15 +44,15 @@ const Slider = () => {
     const sliderNext = () => {
 
         // currentSlider >= sliderLength
-            //     ? setCurrentSlider(1)
-            //     : setCurrentSlider(currentSlider + 1);
+        //     ? setCurrentSlider(1)
+        //     : setCurrentSlider(currentSlider + 1);
 
         if (sliderLength > 0) {
             currentSlider >= sliderLength
                 ? setCurrentSlider(1)
                 : setCurrentSlider(currentSlider + 1);
 
-        // con animacion de slider ..................................   
+            // con animacion de slider ..................................   
             const firstSlide = slider.current.children[0];
             const slideLength = slider.current.children[0].offsetWidth;
             slider.current.style.transition = `500ms ease-out all`;
@@ -62,6 +62,8 @@ const Slider = () => {
                 slider.current.style.transition = 'none';
                 slider.current.style.transform = 'translateX(0px)';
                 slider.current.appendChild(firstSlide);
+
+                slider.current.removeEventListener('transitionend', stopTransition);
             }
 
             slider.current.addEventListener('transitionend', stopTransition);
@@ -70,17 +72,29 @@ const Slider = () => {
     }
 
     const sliderPrev = () => {
-        // if (slider.current.children.length > 0) {
+
+        // currentSlider <= 1
+        //         ? setCurrentSlider(sliderLength)
+        //         : setCurrentSlider(currentSlider - 1);
+
+        if (slider.current.children.length > 0) {
             currentSlider <= 1
                 ? setCurrentSlider(sliderLength)
                 : setCurrentSlider(currentSlider - 1);
-            // console.log(slider.current.children);
-            // const firstSlide = slider.current.children[0];
-            // const slideLength = slider.current.children[0].offsetWidth;
-            // slider.current.style.transition = `300ms ease-out all`;
-            // slider.current.style.transform = `translateX(${slideLength}px)`;
-            // slider.current.style.transform = `translateX(0px)`;
-        // }
+
+            const index = slider.current.children.length - 1;
+            const lastSlide = slider.current.children[index];
+            slider.current.insertBefore(lastSlide, slider.current.firstChild);
+
+            slider.current.style.transition = 'none';
+            const slideLength = slider.current.children[0].offsetWidth;
+            slider.current.style.transform = `translateX(-${slideLength}px)`;
+
+            setTimeout(() => {
+                slider.current.style.transition = `500ms ease-out all`;
+                slider.current.style.transform = `translateX(0px)`;
+            }, 30);
+        }
     }
 
     return (
