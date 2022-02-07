@@ -1,4 +1,10 @@
 :root{
+    /* colors */
+    --main-white: #fff;
+    /*size */
+    --size-iconNavBar: 26;
+
+    /* fonts */
     --oswald: 'Oswald', sans-serif;
-    --quattrocento :'Quattrocento', serif;
+    --quattrocento: 'Quattrocento', serif;
 }
