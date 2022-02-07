@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
 import '../../styles/NavBar1.css';
@@ -9,6 +9,8 @@ import { MdMenu, MdClear } from 'react-icons/md';
 
 const NavBar1 = () => {
     const [click, setClick] = useState(false);
+    const [isTransparent, setIsTransparent] = useState(true);
+
     const handleClick = () => {
         setClick(!click);
     }
@@ -17,8 +19,16 @@ const NavBar1 = () => {
         setClick(false);
     }
 
+    useEffect(()=>{ 
+        window.onscroll = () =>{
+            window.scrollY > 200 
+            ? setIsTransparent(false)
+            : setIsTransparent(true)
+        }
+    },[]);
+
     return ( 
-        <nav className='navbar'>
+        <nav className={`navbar ${isTransparent ? '':'navbar-background'}`}>
             <div className="navbar__container">
                 <Link to='/' className='navbar__logo'> <img src={logo} alt="logo" /></Link>
                 <div className="menu__icon" onClick={handleClick}>
