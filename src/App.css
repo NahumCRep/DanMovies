@@ -1,9 +1,12 @@
 :root {
     /* colors */
     --main-white: #fff;
+    --secondary-color:  #5B2C6F;
 
     /*size */
     --size-iconNavBar: 26;
+
+    --radius: 45px;
 }
 
 
