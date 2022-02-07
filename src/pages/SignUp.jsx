@@ -1,11 +1,11 @@
 import React from 'react';
 
 const SignUp = () => {
-    return ( 
+    return (
         <div>
-        Paǵina de LogIn/SignUp
+            Paǵina de LogIn/SignUp
         </div>
-     )
+    )
 };
- 
+
 export default SignUp;
