@@ -48,6 +48,30 @@ details{
     float: right;
 }
 
+.set__review{
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    background-color: #5B2C6F;
+    font-family: var(--quattrocento);
+}
+
+.set__review textarea{
+    width: 100%;
+    height: 70%;
+    resize: none;
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+.set__review button{
+    float: right;
+    margin-top: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
 .reviews{
     width: 60%;
     max-width: 60%;
@@ -56,14 +80,17 @@ details{
     background-color: #17202A;
 }
 
+.reviews__list{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .aside{
     width: 40%;
     /* flex-basis: 1; */
     background-color: aqua;
 }
 
-.reviewbox{
-    width: 100%;
-    height: 100px;
-    background-color: brown;
-}

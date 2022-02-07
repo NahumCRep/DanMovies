@@ -1,0 +1,132 @@
+@import url('root.css');
+
+.reviewbox{
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-color: brown;
+}
+
+.reviewbx__user{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+}
+
+.reviewbx__user span{
+    font-family: var(--quattrocento);
+    font-weight: bold;
+}
+
+.reviewbx__user button{
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    color: #fff;
+    cursor: pointer;
+}
+
+.reviewbx__review{
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    /* background-color: aqua; */
+}
+
+.reviewbx__btns{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding-right: 0.5rem;
+}
+
+.reviewbx__btns button{
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.reviewbx__btns svg{
+    cursor: pointer;
+}
+
+
+.set__response{
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    margin-top: 10px;
+    background-color: #5B2C6F;
+    font-family: var(--quattrocento);
+}
+
+.response__textarea{
+    width: 100%;
+    height: 70%;
+    resize: none;
+    padding: 1rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+.set__response button{
+    float: right;
+    margin-top: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.reviewbx__responses{
+    width: 100%;
+    height: auto;
+}
+
+.btn__responses{
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    font-family: var(--oswald);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: chartreuse;
+}
+
+.btn__responses span{
+    transition: all 0.3s ease-in-out;
+}
+
+.btn__responses:hover > span{ 
+    letter-spacing: 1px;
+}
+
+.response__list{
+    width: 100%;
+    height: 0px;
+    margin-top: 5px;
+    background-color: coral;
+    transition: height 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.res__list-open{
+    height: auto;
+}

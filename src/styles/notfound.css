@@ -41,8 +41,11 @@
     gap: 10px;
 }
 
-.notfound__link-container:hover > svg{
+.notfound__link-container svg{
     transition: transform 0.3s ease-in-out;
+}
+
+.notfound__link-container:hover > svg{ 
     transform: translateX(-5px);
 }
 
