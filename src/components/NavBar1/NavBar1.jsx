@@ -1,8 +1,8 @@
-import '../../styles/NavBar1.css';
-import logo from '../../assets/logos/logoDan.png';
-
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
+
+import '../../styles/NavBar1.css';
+import logo from '../../assets/logos/logoDan.png';
 
 //Iconos
 import { MdMenu, MdClear } from 'react-icons/md';
