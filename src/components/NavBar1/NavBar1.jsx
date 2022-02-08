@@ -28,7 +28,7 @@ const NavBar1 = () => {
     },[]);
 
     return ( 
-        <nav className={`navbar ${isTransparent ? '':'navbar-background'}`}>
+        <nav className={`navbar ${isTransparent ? '':'active'}`}>
             <div className="navbar__container">
                 <Link to='/' className='navbar__logo'> <img src={logo} alt="logo" /></Link>
                 <div className="menu__icon" onClick={handleClick}>

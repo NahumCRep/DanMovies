@@ -2,6 +2,8 @@
     /* colors */
     --main-white: #fff;
     --secondary-color:  #5B2C6F;
+    --blur: --blur: hsla(0, 0%, 100%, 0.03);
+    --blur-small: hsla(0, 6%, 51%, 0.379);
 
     /*size */
     --size-iconNavBar: 26;

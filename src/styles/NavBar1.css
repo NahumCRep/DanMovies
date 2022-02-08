@@ -1,6 +1,6 @@
 .navbar {
     width: 100%;
-    background: none;
+    background: transparent;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -12,10 +12,11 @@
     z-index: 999;
   }
 
-  .navbar-background{
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  .navbar.active {
+    background: var(--blur); 
+    /*background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);*/
   }
-  
+
   .navbar__container {
     display: flex;
     justify-content: center;

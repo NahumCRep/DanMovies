@@ -9,6 +9,7 @@
     width: min(100%,850px);
     height: 60vh;
     margin: 80px auto;
+    /*display: flex;*/
 }
 
 .container {
