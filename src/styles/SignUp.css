@@ -4,37 +4,90 @@
     /*background: red;*/
 }
 
-.ingresar__container {
-    background: blue;
+.ingresar__container { /*container*/
+    /*background: blue;*/
     width: min(100%,850px);
     height: 60vh;
     margin: 80px auto;
-    /*display: flex;*/
+    box-shadow: 0 5px 10px var(--blur-small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    width: 60%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 40px 30px;
 }
 .container.login {
-    background:greenyellow;
+    background: var(--blur-small);
 }
 .container.signup {
     background: burlywood;
 }
-.title {
+
+.form{
+   /* background: red;*/
+    width: calc(100% / 2 -250x);
+
+}
+.form .title {
     color: var(--main-white);
     font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    position: relative;
 }
-.inputBox {
-    display: flex;
-    width: 90%;
+/* linea debajo del titulo*/
+.form .title:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 25px;
+    background: var(--main-black);
+}
+.form.signUp .title:before {
+    width: 20px;
 }
 
+/* inputs */
+.input__boxes {
+    margin-top: 2rem;
+}
+
+.inputBox {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    /*background: rebeccapurple;*/
+    margin: 0.5rem 0;
+    
+}
+.inputBox input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-weight: 500px;
+    border-bottom: 4px solid var(--main-black);
+    transition: all 0.3s ease;
+}
+.inputBox input:focus {
+    border-color: red;
+}
 .icon {
     color: var(--main-white);
+    font-size: 26px;
+    margin-right: 0.5rem;
 }
+

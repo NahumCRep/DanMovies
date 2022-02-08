@@ -1,9 +1,10 @@
 :root {
     /* colors */
     --main-white: #fff;
+    --main-black:  #000;
     --secondary-color:  #5B2C6F;
-    --blur: --blur: hsla(0, 0%, 100%, 0.03);
-    --blur-small: hsla(0, 6%, 51%, 0.379);
+    --blur: hsla(0, 0%, 100%, 0.03);
+    --blur-small: hsla(0, 10%, 74%, 0.379);
 
     /*size */
     --size-iconNavBar: 26;
