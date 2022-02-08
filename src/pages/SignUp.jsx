@@ -29,7 +29,7 @@ const SignUp = () => {
                             </div>
                             
                             <div className="text">Olvidaste la contraseña?</div>
-                            <Button text='Ingresar'/>
+                            <Button  className='btn' text='Ingresar'/>
                             <div className="text">¿No tienes una cuenta?<label>Registrarse</label></div>
                         
                         </div>
