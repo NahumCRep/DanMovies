@@ -6,11 +6,19 @@ import Button from '../components/Button/Button'
 
 //Iconos
 import { MdMail, MdPassword, MdPerson } from 'react-icons/md';
+import logo from '../assets/logos/logoDan.png';
 
 const SignUp = () => {
     return (
         <section className="signUp">
             <div className="ingresar__container">
+                <input type="checkbox" id='flip'></input>
+                <div className="cover">
+                    <span className='cover__text'>¡Hola!</span>
+                    <span className='cover__text'>Te esperabamos</span>  
+                    <img className='cover__img' src={logo} alt="logo" />
+                </div>
+
                 <div className="container login">
                     <form action='#'>
                         <div className="form login">
@@ -29,8 +37,11 @@ const SignUp = () => {
                             </div>
                             
                             <div className="text">Olvidaste la contraseña?</div>
-                            <Button  className='btn' text='Ingresar'/>
-                            <div className="text">¿No tienes una cuenta?<label>Registrarse</label></div>
+                            <div className="btn__container">
+                                <Button  className='btn' text='Ingresar'/>
+                            </div>
+                            
+                            <div className="text">¿No tienes una cuenta?<label htmlFor="flip">Registrarse</label></div>
                         
                         </div>
                     </form>
@@ -57,8 +68,10 @@ const SignUp = () => {
 
                            </div>
                             
-                            <Button text='Registrarse'/>
-                            <div className="text">¿Ya tienes una cuenta?<label>Ingresar</label></div>
+                           <div className="btn__container">
+                             <Button text='Registrarse'/>
+                            </div>
+                            <div className="text">¿Ya tienes una cuenta?<label htmlFor="flip">Ingresar</label></div>
                         
                         </div>
                     </form>
