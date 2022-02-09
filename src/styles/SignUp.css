@@ -109,8 +109,8 @@
 .form{
    /* background: red;*/
     width: calc(100% / 2 -250x);
-
 }
+
 .form .title {
     color: var(--main-white);
     font-size: 2rem;
@@ -172,3 +172,24 @@
     align-items: center;
 }
 
+@media (max-width:950px) {
+    .ingresar__container .cover {
+        display: none;
+    }
+    .container.login {
+        /* background: red;*/
+         width: 100%;
+     }
+
+    .container.signup{
+        display: none;
+    }
+
+    .ingresar__container  #flip:checked ~ .container.signup {
+        display: flex;
+    
+    }
+    .ingresar__container  #flip:checked ~ .container.login {
+        display: none;
+    }
+}
