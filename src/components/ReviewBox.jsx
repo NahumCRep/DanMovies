@@ -3,8 +3,9 @@ import '../styles/reviewbox.css';
 import { FaUser, FaTrashAlt, FaRegHeart, FaHeart } from 'react-icons/fa';
 import { MdQuestionAnswer, MdOutlineQuestionAnswer } from 'react-icons/md';
 import ResponseBox from './ResponseBox';
+import StarsRating from './StarsRating';
 
-const ReviewBox = () => {
+const ReviewBox = ({reviewItem}) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isResponse, setIsResponse] = useState(false);
   const [isListOpen, setIsListOpen] = useState(false);
@@ -16,19 +17,25 @@ const ReviewBox = () => {
         <button><FaTrashAlt size={20} /></button>
       </div>
       <div className='reviewbx__review'>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eius doloribus minima harum repellat, cupiditate aliquam vero ipsa nostrum. Quod pariatur ipsam dignissimos quibusdam placeat. Rem eligendi natus minima voluptas.</p>
+        <p>{reviewItem.review}</p>
       </div>
-      <div className='reviewbx__btns'>
-        <button onClick={() => setIsLiked(!isLiked)}>
-          {
-            isLiked ? <FaHeart size={20} color="red" /> : <FaRegHeart size={20} />
-          }
-        </button>
-        <button onClick={() => setIsResponse(!isResponse)}>
-          {
-            isResponse ? <MdOutlineQuestionAnswer size={23} /> : <MdQuestionAnswer size={23} />
-          }
-        </button>
+      <div className='reviewbx__footer'>
+        <div className='review__footer_rate'>
+          <span>Calificado: </span>
+          <StarsRating rate={reviewItem.reviewRate} />
+        </div>
+        <div className='reviewbx__btns'>
+          <button onClick={() => setIsLiked(!isLiked)}>
+            {
+              isLiked ? <FaHeart size={20} color="red" /> : <FaRegHeart size={20} />
+            }
+          </button>
+          <button onClick={() => setIsResponse(!isResponse)}>
+            {
+              isResponse ? <MdOutlineQuestionAnswer size={23} /> : <MdQuestionAnswer size={23} />
+            }
+          </button>
+        </div>
       </div>
       {
         isResponse && <div className='set__response'>
@@ -44,8 +51,8 @@ const ReviewBox = () => {
           <span>{isListOpen ? 'ocultar respuestas...' : 'ver respuestas...'}</span>
         </button>
         <div className={`response__list ${isListOpen ? 'res__list-open' : ''}`}>
-            <ResponseBox />
-            <ResponseBox />
+          <ResponseBox />
+          <ResponseBox />
         </div>
       </div>
     </div>

@@ -2,14 +2,14 @@ import React from 'react';
 import '../styles/moviebanner.css';
 import {Link} from 'react-router-dom';
 
-const MovieBanner = ({id, title, banner}) => {
+const MovieBanner = ({movie}) => {
   return(
       <div className='movie__banner'>
           <div className='movie__image'>
-              <img src={banner} alt={title} />
+              <img src={movie.img} alt={movie.title} />
           </div>
           <div className='movie__title'>
-              <Link to={`/details/${id}`}>{title}</Link>
+              <Link to={`/details/${movie.id}`}>{movie.title}</Link>
           </div>
       </div>
   )

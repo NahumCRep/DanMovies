@@ -9,7 +9,7 @@ const Movies = () => {
          {
            movies.map((movie) => {
              return(
-                <MovieBanner key={movie.id} id={movie.id} title={movie.title} banner={movie.img} />
+                <MovieBanner key={movie.id} movie={movie} />
              )
            })
          }

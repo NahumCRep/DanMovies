@@ -1,6 +1,11 @@
 :root{
     /* colors */
     --main-white: #fff;
+    --main-black: #110D0E;
+    --main-gray: #363535;
+    --main-light-black:#1F1E1E;
+    --main-purple: #5B2C6F;
+    --second-purple: #8E44AD;
     /*size */
     --size-iconNavBar: 26;
 
