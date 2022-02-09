@@ -1,3 +1,5 @@
+@import url('root.css');
+
 .responsebox{
     width: 100%;
     height: auto;
@@ -6,7 +8,7 @@
 .responsebox__content{
     width: 100%;
     height: auto;
-    background-color: yellow;
+    background-color: var(--main-gray);
     display: flex;
 }
 
@@ -37,7 +39,7 @@
 .response__btns{
     width: 100%;
     height: 30px;
-    background-color: yellow;
+    background-color: var(--main-gray);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -49,4 +51,5 @@
     outline: none;
     border: none;
     background: none;
+    color: var(--main-white);
 }

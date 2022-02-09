@@ -1,8 +1,20 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import '../styles/responsebox.css';
 import { FaUser, FaTrashAlt, FaRegHeart, FaHeart } from 'react-icons/fa';
+import { moviesContext } from '../context/MoviesContext';
 
-const ResponseBox = () => {
+const ResponseBox = ({rvwID, responseItem, handleRender}) => {
+    const { removeResponse } = useContext(moviesContext);
+   
+
+    const deleteResponse = () => {
+        removeResponse({
+            idReview: rvwID,
+            idResponse: responseItem.responseID
+        });
+        handleRender();
+    }
+
     return (
         <div className='responsebox'>
             <div className='responsebox__content'>
@@ -11,14 +23,11 @@ const ResponseBox = () => {
                     <span>{'ezequiel'}</span>
                 </div>
                 <div className='response__message'>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sed natus rem asperiores modi, eum neque quisquam. Illo reprehenderit, obcaecati accusantium ad veritatis molestiae sequi fugiat perspiciatis illum. Voluptas, illum?
-
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam nemo dicta consequuntur! Delectus minus fugit tenetur ut itaque ab fugiat quibusdam animi, laboriosam molestiae assumenda. Nobis soluta deleniti veniam corporis!
-                    </p>
+                    <p>{responseItem.message}</p>
                 </div>
             </div>
             <div className='response__btns'>
-                <button>
+                <button onClick={deleteResponse}>
                     <FaTrashAlt size={15} />
                 </button>
             </div>

@@ -15,10 +15,10 @@ const Details = () => {
 
   const { id } = useParams();
   const { movies, reviews, addReview } = useContext(moviesContext);
-
+  // obtener movie
   const movie = movies.filter(movie => movie.id === id)[0];
   const movieReviews = reviews.filter(rev => rev.movieID === id);
-  console.log(movieReviews);
+  // console.log(movieReviews);
 
   const saveReview = () => {
     // console.log(reviewRef.current.value);

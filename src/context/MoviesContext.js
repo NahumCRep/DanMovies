@@ -51,8 +51,8 @@ const MoviesContext = ({ children }) => {
         dispatch({ type: 'addResponseToReview', payload: responseObject });
     }
 
-    const removeResponse = (objectID) => {
-        dispatch({type: 'removeResponseFromReview', payload: objectID});
+    const removeResponse = (responseObject) => {
+        dispatch({type: 'removeResponseFromReview', payload: responseObject});
     }
 
     return (

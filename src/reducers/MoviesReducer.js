@@ -7,13 +7,24 @@ export const MoviesReducer = (state, action) => {
         case 'addReview':
             return [...state, payload]
         case 'removeReview':
-            
-            break;
+            newState = state.filter(revw => revw.reviewID !== payload);
+            return newState;
         case 'addResponseToReview':
-            break;
+            state.forEach(revw => {
+                if(revw.reviewID === payload.idReview){
+                    revw.responses.push(payload.response);
+                } 
+            });
+            return state;
         case 'removeResponseFromReview':
-            break;
+            state.forEach(revw => {
+                if(revw.reviewID === payload.idReview){
+                    let newResponses = revw.responses.filter(resp => resp.responseID !== payload.idResponse);
+                    revw.responses = newResponses;
+                } 
+            });
+            return state;
     }
 
-    return newState;
+    // return newState;
 }
