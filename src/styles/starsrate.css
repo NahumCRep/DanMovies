@@ -1,0 +1,24 @@
+
+
+.starsrate__container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star__label input[type="radio"]{
+    display: none;
+}
+
+.starsrate__container svg{
+    cursor: pointer;
+    /* fill: #E5E7E9; */
+}
+
+.starsrate__container svg:hover{
+    fill: #F1C40F;
+}
+
+.star__active{
+    fill: #F1C40F;
+}
