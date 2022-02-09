@@ -6,9 +6,12 @@
     --main-light-black:#1F1E1E;
     --main-purple: #5B2C6F;
     --second-purple: #8E44AD;
+    --secondary-color:  #5B2C6F;
+    --blur: hsla(0, 0%, 100%, 0.03);
+    --blur-small: hsla(0, 10%, 74%, 0.379);
     /*size */
     --size-iconNavBar: 26;
-
+    --radius: 45px;
     /* fonts */
     --oswald: 'Oswald', sans-serif;
     --quattrocento: 'Quattrocento', serif;
