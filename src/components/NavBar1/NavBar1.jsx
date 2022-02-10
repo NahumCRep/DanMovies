@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {useState, useEffect, useContext} from 'react';
+import {Link} from 'react-router-dom'
 
 import '../../styles/NavBar1.css';
 import logo from '../../assets/logos/logoDan.png';
@@ -7,9 +7,13 @@ import logo from '../../assets/logos/logoDan.png';
 //Iconos
 import { MdMenu, MdClear } from 'react-icons/md';
 
+//Context
+import { userContext } from '../../context/UserContext';
+
 const NavBar1 = () => {
     const [click, setClick] = useState(false);
     const [isTransparent, setIsTransparent] = useState(true);
+    const {user, setUser} = useContext(userContext);
 
     const handleClick = () => {
         setClick(!click);
@@ -43,9 +47,11 @@ const NavBar1 = () => {
                         <Link to="/movies" className='nav__links' onClick={closeMenuDesp}>Peliculas</Link>
                     </li>
                     <li className="nav__menu__item">
-                        <Link to="/signUp" className='nav__links' onClick={closeMenuDesp}>Ingresar</Link>
-                    </li>
+                        <Link to="/signUp" className='nav__links' onClick={closeMenuDesp}>{user ? 'Salir' : 'Ingresar'}</Link>
+                    </li>   
                 </ul>
+
+                <p className='user__name'>{user ? user.name : ''}</p>
             </div>
         </nav>
      )
