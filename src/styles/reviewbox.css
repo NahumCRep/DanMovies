@@ -167,3 +167,9 @@
 .res__list-open{
     height: auto;
 }
+
+@media (max-width: 960px) {
+    .set__response{
+        padding: 0.5rem;
+    }
+}

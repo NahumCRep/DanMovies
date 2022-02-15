@@ -53,3 +53,12 @@
     background: none;
     color: var(--main-white);
 }
+
+@media (max-width: 960px) {
+    .set__response{
+        padding: 0.5rem;
+    }
+    .reponsebox__user span{
+        font-size: 0.7rem;
+    }
+}

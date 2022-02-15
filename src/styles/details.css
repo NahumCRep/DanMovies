@@ -122,6 +122,25 @@ details{
 .aside{
     width: 40%;
     /* flex-basis: 1; */
-    /* background-color: aqua; */
+    background-color: aqua;
+}
+
+@media (max-width: 960px) {
+    .details__reviews{
+       flex-direction: column;
+    }
+    .reviews{
+        width: 100%;
+        max-width: 100%;
+    }
+    .set__review{
+        padding: 0.5rem;
+    }
+
+    .aside{
+        margin-top: 30px;
+        width: 100%;
+        height: 300px;
+    }
 }
 
