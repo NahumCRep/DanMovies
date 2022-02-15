@@ -1,20 +1,26 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { moviesContext } from '../context/MoviesContext';
-import MovieBanner from '../components/MovieBanner';
+// import MovieBanner from '../components/MovieBanner';
+import MoviesGrid from '../components/MoviesGrid';
+import Search from '../components/Search';
 import '../styles/moviestemp.css';
 
 const Movies = () => {
-  const {movies} = useContext(moviesContext);
-  return(
-      <div className='grid-container'>
-         {
-           movies.map((movie) => {
-             return(
-                <MovieBanner key={movie.id} movie={movie} />
-             )
-           })
-         }
-      </div>
+  const { movies } = useContext(moviesContext);
+  return (
+    // <div className='grid-container'>
+    //    {
+    //      movies.map((movie) => {
+    //        return(
+    //           <MovieBanner key={movie.id} movie={movie} />
+    //        )
+    //      })
+    //    }
+    // </div>
+    <div>
+      <Search />
+      <MoviesGrid />;
+    </div>
   )
 };
 
