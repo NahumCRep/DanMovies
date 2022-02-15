@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
 import { moviesContext } from '../context/MoviesContext';
 import MovieBanner from '../components/MovieBanner';
+import '../styles/moviestemp.css';
 
 const Movies = () => {
   const {movies} = useContext(moviesContext);
   return(
-      <div>
+      <div className='grid-container'>
          {
            movies.map((movie) => {
              return(
