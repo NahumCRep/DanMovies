@@ -8,8 +8,8 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom';
 // import Details from './pages/Details';
 import {Home, Movies, Details, NotFound, SignUp} from './pages';
 
-
 function App() {
+  
   return (
    <BrowserRouter>
       <NavBar1 />

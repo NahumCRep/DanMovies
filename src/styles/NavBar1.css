@@ -67,15 +67,13 @@
     transition: all 0.2s ease-out;
   }
   
-  .fa-bars {
-    color: #fff;
-  }
-  
-
   .menu__icon {
     display: none;
   }
   
+ .navbar__container .user__name {
+    color: var(--main-white);
+  }
   @media (max-width: 960px) {
     .nav__menu {
         display: flex;
