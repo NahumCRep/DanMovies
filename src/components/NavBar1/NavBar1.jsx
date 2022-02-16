@@ -25,7 +25,7 @@ const NavBar1 = () => {
 
     useEffect(()=>{ 
         window.onscroll = () =>{
-            window.scrollY > 200 
+            window.scrollY > 50 
             ? setIsTransparent(false)
             : setIsTransparent(true)
         }
