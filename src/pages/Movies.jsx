@@ -17,7 +17,7 @@ const Movies = () => {
     //      })
     //    }
     // </div>
-    <div>
+    <div className="pages__movies">
       <Search />
       <MoviesGrid />;
     </div>
