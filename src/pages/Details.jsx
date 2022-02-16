@@ -27,16 +27,11 @@ const Details = () => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=3d9d528c10bd10aab1dcbcd5f1f8f9bf`)
       .then((result) => result.json())
       .then((data) => {
-        // console.log(data)
+        console.log(data)
         setIsLoading(false);
         setMovie(data)
         // console.log(reviews);
         setMovieReviews(reviews)
-        // console.log(movieReviews)
-        // console.log(id)
-        // const reviewsfilter = reviews.filter(rev => rev.movieID === id);
-        // console.log(reviewsfilter);
-        // setMovieReviews(reviewsfilter);
       });
    
   }, [id]);
@@ -56,13 +51,6 @@ const Details = () => {
 
   const reviewsfilter = movieReviews.filter(rev => rev.movieID === id);
   console.log(reviewsfilter);
-
-  // utilizando mockup
-  // const { id } = useParams();
-
-  // obtener movie
-  // const movief = movies.filter(movie => movie.id === id)[0];
-
 
   const saveReview = () => {
     addReview({
@@ -90,10 +78,12 @@ const Details = () => {
             : (
               <div className={styles.container}>
                 <img className={`${styles.col} ${styles.movieImage}`} src={imageUrl} alt={movie.title} />
-                <div className={`${styles.col} ${styles.movieDetails}`}>
+                <div className={`${styles.col2} ${styles.movieDetails}`}>
                   <p className={`${styles.firstP}`}><strong>Title: </strong>{movie.title}</p>
                   <p><strong>Genres: </strong>{movie.genres.map(genre => genre.name).join(", ")}</p>
                   <p><strong>Description: </strong>{movie.overview}</p>
+                  <p><strong>Release Year: </strong>{new Date(movie.release_date).getFullYear()}</p>
+                  <p><strong>Rate: </strong>{movie.vote_average}</p>
                 </div>
               </div>
             )

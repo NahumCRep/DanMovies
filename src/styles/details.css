@@ -8,6 +8,8 @@ details{
 .details__info{
     width: 100%;
     height: auto;
+    padding-top: 8rem;
+    margin-bottom: 6rem;
     /* background-color: brown; */
 }
 

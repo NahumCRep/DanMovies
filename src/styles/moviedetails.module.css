@@ -10,12 +10,28 @@
     max-width: 300px;
     height: auto;
 }
+.col2{
+    width: 60%;
+    min-width: 300px;
+    height: auto;
+}
 .movieImage{
     border-radius: 15px;
 }
 .movieDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     font-size: 19px;
     color: white;
+    padding-top: 1rem;
+}
+.movieDetails p{
+    font-size: 15px;
+}
+
+.movieDetails strong{
+    font-size: 19px;
 }
 .firstP{
     margin-top: 0;
