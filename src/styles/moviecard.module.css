@@ -10,6 +10,15 @@
 .movieImage{
     border-radius: 10px;
 }
+
+.movieCard a {
+    color: var(--main-white);
+    text-decoration: none;
+}
+/*
+.movieCard a:hover {
+    font-weight: bold;
+}*/
 @media (max-width:560px){
     .movieImage{
        width: 90%;
