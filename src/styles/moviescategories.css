@@ -10,22 +10,70 @@
     border-bottom-left-radius: 10px;
 }
 
-.movies_categories-div ul{
+.movies_categories-head{
     display: flex;
+    align-items: center;
+}
+
+.categorie-btn-menu{
+    display: none;
+    border-radius: 6px;
+    outline: none;
+    border:none;
+    background: none;
+}
+
+.categories__list{
+    display: flex;
+    height: auto;
     flex-direction: column;
     gap: 0.5rem;
     margin-top: 20px;
 }
 
-.movies_categories-div ul li{
+.categories__list li{
     list-style: none;
 }
-.movies_categories-div ul li a{
+.categories__list li a{
     text-decoration: none;
     color: var(--main-white);
     transition: color 0.3s ease-in-out;
 }
-.movies_categories-div ul li a:hover{
+.categories__list li a:hover{
     text-decoration: none;
     color: var(--second-purple);
+}
+
+@media (max-width: 960px) {
+    .movies_categories-div{
+        padding-left: 5rem;
+    }
+    .movies_categories-head{
+        justify-content: space-between;
+     }
+     .movies_categories-head h3{
+        font-size: 1.5rem;
+     }
+    .categorie-btn-menu{
+        display: block;
+    }
+    .categories__list{
+        gap: 1rem;
+    }
+
+    .categories__list li a{
+        font-size: 1.2rem;
+    }
+
+    .menu_categories-div{
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .menu_categories-open{
+        height: auto;
+    }
+    .menu_categories-close{
+        height: 0px;
+    }
 }

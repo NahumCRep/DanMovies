@@ -1,0 +1,42 @@
+@import url('root.css');
+
+.pagination__div{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.pagination_page{
+    color: var(--main-white);
+}
+
+.pagination_btn{
+    width: 80px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    background-color: var(--main-purple);
+    color: var(--main-white);
+}
+
+.pagination_btn svg{
+    transition: all 0.3s ease-in-out;
+}
+
+.pagination_prev:hover > svg{
+    transform: translateX(-5px);
+}
+
+.pagination_next:hover > svg{
+    transform: translateX(5px);
+}

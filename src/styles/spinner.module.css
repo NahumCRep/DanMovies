@@ -2,7 +2,12 @@
     color: white;
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem auto;
 }
 .spinner{
     animation: spinning 1s linear infinite;

@@ -1,8 +1,7 @@
 import React from 'react';
-import MoviesGrid from '../components/MoviesGrid';
 import Search from '../components/Search';
 import MoviesCategories from '../components/MoviesCategories';
-import '../styles/moviestemp.css';
+import '../styles/moviesgridlayout.css';
 
 const MovieGridLayout = ({children}) => {
     return (
@@ -10,12 +9,10 @@ const MovieGridLayout = ({children}) => {
             <div className='page__moives-movies'>
                 <Search />
                 {children}
-                {/* <MoviesGrid /> */}
             </div>
             <div className='page__movies-categories'>
                 <MoviesCategories />
             </div>
-
         </div>
     )
 }

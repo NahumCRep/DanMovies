@@ -1,3 +1,5 @@
+@import url('./styles//root.css');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,7 +23,7 @@ code {
 }
 
 /* section lista de peliculas */
-.section__movieList {
+/* .section__movieList {
   background: transparent;
   color: var(--main-white);
   padding: 1rem;
@@ -55,9 +57,27 @@ code {
 .section__movieList .movieList__list li {
   list-style: none;
   margin: 0 5px;
+} */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--main-gray); 
 }
 
-@media (max-width: 560px) {
+
+::-webkit-scrollbar-thumb {
+  background: var(--second-purple);
+  border-radius: 20px; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-purple); 
+}
+
+/* @media (max-width: 560px) {
   .section__movieList .movieList__list {
     flex-direction: column;
     min-height: 100vh;
@@ -66,5 +86,5 @@ code {
   .section__movieList .movieList__list li{
     margin: 0.6rem auto;
   }
-}
+} */
 
