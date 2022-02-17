@@ -1,6 +1,7 @@
 import '../styles/SignUp.css';
 
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
+import { Navigate } from "react-router-dom";
 import { userContext } from '../context/UserContext';
 //Componentes
 import Button from '../components/Button/Button'
@@ -10,7 +11,9 @@ import { MdMail, MdPassword, MdPerson } from 'react-icons/md';
 import logo from '../assets/logos/logoDan.png';
 
 const SignUp = () => {
-    const {user, setUser} = useContext(userContext)
+    const {user, setUser} = useContext(userContext);
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
     const logIn = (event) => {
         event.preventDefault();
@@ -30,9 +33,11 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(user => {
-            setUser({isLogged:true,name:user.data.firstName})
+            setUser({isLogged:true,name:user.data.firstName, message:""});
+            emailRef.current.value = "";
+            passwordRef.current.value="";
         })
-        .catch(error => setUser({isLogged:false}))
+        .catch(error => setUser({isLogged:false, message:"Ingrese Email/contraseña correcta"}))
     }
 
     const signIn = (event) => {
@@ -54,9 +59,14 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(user => {
-            setUser({isLogged:true,name:user.data.firstName})
+            setUser({isLogged:true,name:user.data.firstName,message:""});
+
         })
-        .catch(error => setUser({isLogged:false}))
+        .catch(error => setUser({isLogged:false, message:""}))
+    }
+
+    if (user.isLogged){
+        return <Navigate to="/movies"/>;
     }
     return (
         <section className="signUp">
@@ -77,16 +87,16 @@ const SignUp = () => {
                             <div className="input__boxes">
                                 <div className="inputBox">
                                     <MdPerson className="icon user"/>
-                                    <input type="email" name="emailL" placeholder='Ingrese su email' required></input>
+                                    <input type="email" name="emailL" ref={emailRef} placeholder='Ingrese su email' required></input>
                                 </div>
                             
                                 <div className="inputBox">
                                     <MdPassword className="icon password"/>
-                                    <input type="password" name="passwordL" placeholder='Ingrese su contraseña' required></input>
+                                    <input type="password" name="passwordL" ref={passwordRef} placeholder='Ingrese su contraseña' required></input>
                                 </div>
                             </div>
                             
-                            <div className="text">Olvidaste la contraseña?</div>
+                            <div className="text">{user.message}</div>
                             <div className="btn__container">
                                 <Button  className='btn' text='Ingresar'/>
                             </div>

@@ -103,7 +103,7 @@
     background: var(--blur-small);
 }
 .container.signup {
-    background: burlywood;
+    background: var(--blur-small);
 }
 
 .form{
