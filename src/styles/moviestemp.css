@@ -1,3 +1,5 @@
+@import url('root.css');
+
 .grid-container{
     width: 100%;
     padding-top: 7rem;
@@ -7,5 +9,17 @@
 }
 
 .pages__movies {
+    width: 100%;
+    height: auto;
     padding-top: 100px;
+    display: flex;
+}
+
+.page__moives-movies{
+    width: 85%;
+}
+
+.page__movies-categories{
+    width: 15%;
+    height: 100%;
 }

@@ -1,26 +1,26 @@
-import React, { useContext } from 'react';
-import { moviesContext } from '../context/MoviesContext';
-// import MovieBanner from '../components/MovieBanner';
+import React from 'react';
 import MoviesGrid from '../components/MoviesGrid';
 import Search from '../components/Search';
+import MoviesCategories from '../components/MoviesCategories';
 import '../styles/moviestemp.css';
 
+import MovieGridLayout from '../components/MovieGridLayout';
+
 const Movies = () => {
-  const { movies } = useContext(moviesContext);
   return (
-    // <div className='grid-container'>
-    //    {
-    //      movies.map((movie) => {
-    //        return(
-    //           <MovieBanner key={movie.id} movie={movie} />
-    //        )
-    //      })
-    //    }
+    <MovieGridLayout>
+      <MoviesGrid />
+    </MovieGridLayout>
+    // <div className="pages__movies">
+    //   <div className='page__moives-movies'>
+    //     <Search />
+    //     <MoviesGrid />
+    //   </div>
+    //   <div className='page__movies-categories'>
+    //       <MoviesCategories />
+    //   </div>
     // </div>
-    <div className="pages__movies">
-      <Search />
-      <MoviesGrid />;
-    </div>
+
   )
 };
 

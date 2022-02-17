@@ -12,7 +12,7 @@ export default function Search() {
   const handleSubmit = (e)=>{
     //cuando clickeamos en enviar, activamos el onSubmit que ejecuta la funcion handlesubmit, esa funcion pasa el evento(e) click y despues le decimos e.preventDefault, eso quiere decir que se cancela lo que se hace por defecto en el formulario, enviar datos
     e.preventDefault(); 
-    history("/?search=" + searchText) //permite añadir un nuevo elemento a la ruta y moverme hacia ese elemento
+    history("/movies/?search=" + searchText) //permite añadir un nuevo elemento a la ruta y moverme hacia ese elemento
 
   }
 
