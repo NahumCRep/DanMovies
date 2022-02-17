@@ -15,7 +15,6 @@ const MoviesCategories = () => {
             .then((data) => {
                 setCategoriesList(data);
                 setLoading(false);
-                // console.log(data);
             })
     }
 

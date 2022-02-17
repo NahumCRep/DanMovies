@@ -8,7 +8,6 @@ const MoviesByCategorie = () => {
 
     return (
         <MovieGridLayout>
-            {/* <div>MoviesByCategorie {id}</div> */}
             <MovieListGrid categorieID={id} />
         </MovieGridLayout>   
     )

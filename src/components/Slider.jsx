@@ -9,22 +9,22 @@ import { MdArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 const moviesMockup = [
     {
-        id: '1',
+        id: '299534',
         title: 'Avengers EndGame',
         banner: avengers
     },
     {
-        id: '2',
+        id: '634649',
         title: 'Spiderman No Way Home',
         banner: spiderman
     },
     {
-        id: '3',
-        title: 'Harry Potter Reliquias del Muerte Parte 2',
+        id: '12445',
+        title: 'Harry Potter and the Deathly Hallows: Part 2',
         banner: harry
     },
     {
-        id: '4',
+        id: '438631',
         title: 'Dune',
         banner: dune
     },
@@ -100,10 +100,17 @@ const Slider = () => {
     return (
         <div className="slider">
             <div ref={slider} className='slider__banners'>
-                <SliderBanner title={'Avengers EndGame'} banner={avengers} />
-                <SliderBanner title={'spiderman'} banner={spiderman} />
-                <SliderBanner title={'Harry Potter Deadly Hollows 2'} banner={harry} />
-                <SliderBanner title={'Dune'} banner={dune} />
+                {
+                    moviesMockup.map((movie)=>{
+                        return(
+                            <SliderBanner key={movie.id} movieID={movie.id} title={movie.title} banner={movie.banner} />
+                        )
+                    })
+                }
+                {/* <SliderBanner movieID={} title={'Avengers EndGame'} banner={avengers} />
+                <SliderBanner movieID={} title={'spiderman'} banner={spiderman} />
+                <SliderBanner movieID={} title={'Harry Potter Deadly Hollows 2'} banner={harry} />
+                <SliderBanner movieID={} title={'Dune'} banner={dune} /> */}
                 {/* <SliderBanner title={moviesMockup[currentSlider - 1].title} banner={moviesMockup[currentSlider - 1].banner} /> */}
             </div>
             <div className='slider__controls'>

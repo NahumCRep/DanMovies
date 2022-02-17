@@ -34,7 +34,8 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(user => {
-            setUser({isLogged:true,name:user.data.firstName, message:""});
+            // console.log(user);
+            setUser({isLogged:true,name:user.data.firstName, message:"",email:user.data.email});
             emailRef.current.value = "";
             passwordRef.current.value="";
             navigate('/')
@@ -61,7 +62,7 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(user => {
-            setUser({isLogged:true,name:user.data.firstName,message:""});
+            setUser({isLogged:true,name:user.data.firstName,message:"",email:user.data.email});
             navigate('/')
         })
         .catch(error => setUser({isLogged:false, message:""}))

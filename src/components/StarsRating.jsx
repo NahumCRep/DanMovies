@@ -3,8 +3,7 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const StarsRating = ({ rate }) => {
     const [stars, setStars] = useState([]);
-    // let stars=[];
-    
+
     useEffect(()=>{
         let arrayStar = []
         for(let i = 1; i <= 5; i++ ){

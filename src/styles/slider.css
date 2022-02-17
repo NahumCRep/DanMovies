@@ -71,7 +71,7 @@
   letter-spacing: 2px;
 }
 
-.slider__title button{
+.slider__link{
   width: 130px;
   height: 45px;
   outline: none;
@@ -80,8 +80,12 @@
   border-radius: 45px;
   cursor: pointer;
   background-color: #5B2C6F;
-  color: #fff;
   font-size: 1.5rem;
+}
+
+.slider__link a{
+  color: var(--main-white);
+  text-decoration: none;
 }
 
 .slider__banner{

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, {useContext} from 'react';
 import { moviesContext } from '../context/MoviesContext';
 import ReviewBox from '../components/ReviewBox';
 import '../styles/details.css';

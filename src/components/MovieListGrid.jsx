@@ -39,11 +39,6 @@ const MovieListGrid = ({ categorieID }) => {
         }
     }
 
-
-    // if (isLoading) {
-    //     return <Spinner />
-    // }
-
     return (
         <div>
             {

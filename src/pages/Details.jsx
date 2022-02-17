@@ -3,13 +3,12 @@ import '../styles/details.css';
 import styles from '../styles/moviedetails.module.css';
 import { useParams } from 'react-router-dom';
 import { moviesContext } from '../context/MoviesContext';
-import ReviewBox from '../components/ReviewBox';
 import { MdAddComment } from 'react-icons/md';
-// import MovieBanner from '../components/MovieBanner';
 import StarRate from '../components/StarRate';
 import { v4 as uuidv4 } from 'uuid';
 import Spinner from '../components/Spinner';
 import ReviewSection from '../components/ReviewSection';
+import { userContext } from '../context/UserContext';
 
 const Details = () => {
   const { id } = useParams();
@@ -20,40 +19,32 @@ const Details = () => {
   const [movie, setMovie] = useState(null)
   const [isLoading, setIsLoading] = useState(true);
   const { reviews, addReview } = useContext(moviesContext);
+  const {user} = useContext(userContext);
 
   useEffect(() => {
     setIsLoading(true);
-    // console.log(id)
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=3d9d528c10bd10aab1dcbcd5f1f8f9bf`)
       .then((result) => result.json())
       .then((data) => {
         console.log(data)
         setIsLoading(false);
         setMovie(data)
-        // console.log(reviews);
         setMovieReviews(reviews)
+        console.log(user);
       });
    
   }, [id]);
 
-  useEffect(()=>{
-    
-  },[movieReviews])
-
   if (!movie) {
     return null;
-  }else{
-    const reviewsfilter = movieReviews.filter(rev => rev.movieID === id);
-    console.log(reviewsfilter);
   }
 
   const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
 
-  const reviewsfilter = movieReviews.filter(rev => rev.movieID === id);
-  console.log(reviewsfilter);
-
   const saveReview = () => {
     addReview({
+      username: user.name,
+      useremail: user.email, 
       movieID: movie.id,
       reviewID: uuidv4(),
       review: reviewRef.current.value,
@@ -68,7 +59,6 @@ const Details = () => {
     setRating(rate);
   }
 
-  // console.log(movie);
   return (
     <section className='details'>
       <div className='details__info'>
@@ -116,15 +106,6 @@ const Details = () => {
             )
           }
           <ReviewSection movieid={movie.id} />
-          {/* <div className='reviews__list'>
-            {
-              movieReviews.map((rev) => {
-                return (
-                  <ReviewBox key={rev.reviewID} reviewItem={rev} />
-                )
-              })
-            }
-          </div> */}
         </div>
         <div className='aside'>
 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { FaRegStar, FaStar } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 import '../styles/starsrate.css';
 
 const StarRate = ({handleRate}) => {
