@@ -12,7 +12,7 @@ const mockup = {
 }
 
 const UserContext = ({ children }) => {
-    const [user, setUser] = useState(mockup);
+    const [user, setUser] = useState({});
 
     return (
         <userContext.Provider value={{ user, setUser }}>

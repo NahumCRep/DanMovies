@@ -1,0 +1,11 @@
+.section__logout {
+    padding-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #110D0E;;
+}
+.section__logout h2 {
+    color: var(--main-white);
+    /*background: red;*/
+}

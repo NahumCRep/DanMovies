@@ -1,6 +1,7 @@
 import '../styles/SignUp.css';
 
-import React from 'react';
+import React, { useContext } from 'react';
+import { userContext } from '../context/UserContext';
 //Componentes
 import Button from '../components/Button/Button'
 
@@ -9,8 +10,57 @@ import { MdMail, MdPassword, MdPerson } from 'react-icons/md';
 import logo from '../assets/logos/logoDan.png';
 
 const SignUp = () => {
+    const {user, setUser} = useContext(userContext)
+
+    const logIn = (event) => {
+        event.preventDefault();
+        const {emailL, passwordL} = event.target;
+        console.log(emailL.value, passwordL.value);
+
+        fetch("https://backendtzuzulcode.wl.r.appspot.com/auth/login",{
+            method:"POST",
+            credentials:'include',
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                email:emailL.value,
+                password:passwordL.value
+            })
+        })
+        .then(res => res.json())
+        .then(user => {
+            setUser({isLogged:true,name:user.data.firstName})
+        })
+        .catch(error => setUser({isLogged:false}))
+    }
+
+    const signIn = (event) => {
+        event.preventDefault();
+        const {firstName, lastName,email, password} = event.target;
+
+        fetch("https://backendtzuzulcode.wl.r.appspot.com/auth/signup",{
+            method:"POST",
+            credentials:'include',
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                firstName:firstName.value,
+                lastName:lastName.value,
+                email:email.value,
+                password:password.value
+            })
+        })
+        .then(res => res.json())
+        .then(user => {
+            setUser({isLogged:true,name:user.data.firstName})
+        })
+        .catch(error => setUser({isLogged:false}))
+    }
     return (
         <section className="signUp">
+            
             <div className="ingresar__container">
                 <input type="checkbox" id='flip'></input>
                 <div className="cover">
@@ -20,19 +70,19 @@ const SignUp = () => {
                 </div>
 
                 <div className="container login">
-                    <form action='#'>
+                    <form onSubmit={logIn}>
                         <div className="form login">
                             <div className="title">Ingresar</div>
 
                             <div className="input__boxes">
                                 <div className="inputBox">
                                     <MdPerson className="icon user"/>
-                                    <input type="text" name="name" placeholder='Ingrese su usuario' required></input>
+                                    <input type="email" name="emailL" placeholder='Ingrese su email' required></input>
                                 </div>
                             
                                 <div className="inputBox">
                                     <MdPassword className="icon password"/>
-                                    <input type="password" name="password" placeholder='Ingrese su contraseña' required></input>
+                                    <input type="password" name="passwordL" placeholder='Ingrese su contraseña' required></input>
                                 </div>
                             </div>
                             
@@ -48,14 +98,18 @@ const SignUp = () => {
                 </div>
 
                 <div className="container signup">
-                    <form action='#'>
+                    <form onSubmit={signIn}>
                         <div className="form signup">
                             <div className="title">Registrarse</div>
                            
                            <div className="input__boxes">
                                 <div className="inputBox">
                                     <MdPerson className="icon user"/>
-                                    <input type="text" name="name" placeholder='Ingrese nombre de usuario' required></input>
+                                    <input type="text" name="firstName" placeholder='Ingrese nombre' required></input>
+                                </div>
+                                <div className="inputBox">
+                                    <MdPerson className="icon user"/>
+                                    <input type="text" name="lastName" placeholder='Ingrese apellido' required></input>
                                 </div>
                                 <div className="inputBox">
                                     <MdMail className="icon mail"/>

@@ -46,12 +46,16 @@ const NavBar1 = () => {
                     <li className="nav__menu__item">
                         <Link to="/movies" className='nav__links' onClick={closeMenuDesp}>Peliculas</Link>
                     </li>
+
                     <li className="nav__menu__item">
-                        <Link to="/signUp" className='nav__links' onClick={closeMenuDesp}>{user ? 'Salir' : 'Ingresar'}</Link>
+                        {
+                            user.isLogged ? <Link to="/logOut" className='nav__links' onClick={closeMenuDesp}>Salir</Link> : <Link to="/signUp" className='nav__links' onClick={closeMenuDesp}>Ingresar</Link>
+                        }
+                        
                     </li>   
                 </ul>
 
-                <p className='user__name'>{user ? user.name : ''}</p>
+                <p className='user__name'>{user.isLogged ? user.name : 'invitado'}</p>
             </div>
         </nav>
      )
