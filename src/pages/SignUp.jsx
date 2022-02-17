@@ -1,7 +1,7 @@
 import '../styles/SignUp.css';
 
-import React, { useContext, useRef } from 'react';
-import { Navigate } from "react-router-dom";
+import React, { useContext, useRef} from 'react';
+import { useNavigate } from "react-router-dom";
 import { userContext } from '../context/UserContext';
 //Componentes
 import Button from '../components/Button/Button'
@@ -14,6 +14,7 @@ const SignUp = () => {
     const {user, setUser} = useContext(userContext);
     const emailRef = useRef();
     const passwordRef = useRef();
+    const navigate = useNavigate()
 
     const logIn = (event) => {
         event.preventDefault();
@@ -36,8 +37,9 @@ const SignUp = () => {
             setUser({isLogged:true,name:user.data.firstName, message:""});
             emailRef.current.value = "";
             passwordRef.current.value="";
+            navigate('/')
         })
-        .catch(error => setUser({isLogged:false, message:"Ingrese Email/contraseña correcta"}))
+        .catch(error => setUser({isLogged:false, message:error.message}))
     }
 
     const signIn = (event) => {
@@ -60,14 +62,14 @@ const SignUp = () => {
         .then(res => res.json())
         .then(user => {
             setUser({isLogged:true,name:user.data.firstName,message:""});
-
+            navigate('/')
         })
         .catch(error => setUser({isLogged:false, message:""}))
     }
 
-    if (user.isLogged){
+    /*if (user.isLogged === true){
         return <Navigate to="/movies"/>;
-    }
+    }*/
     return (
         <section className="signUp">
             
