@@ -81,10 +81,10 @@
   cursor: pointer;
   background-color: #5B2C6F;
   font-size: 1.5rem;
+  color: var(--main-white);
 }
 
 .slider__link a{
-  color: var(--main-white);
   text-decoration: none;
 }
 
