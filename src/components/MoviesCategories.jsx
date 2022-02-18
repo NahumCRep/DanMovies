@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/moviescategories.css';
 import { BsArrowDownSquareFill, BsArrowUpSquareFill } from 'react-icons/bs';
+import { useLocation } from 'react-router-dom';
 
 const MoviesCategories = () => {
     const [categoriesList, setCategoriesList] = useState(null);
@@ -13,6 +14,7 @@ const MoviesCategories = () => {
         fetch(categoriasURL)
             .then((result) => result.json())
             .then((data) => {
+               
                 setCategoriesList(data);
                 setLoading(false);
             })
@@ -21,6 +23,12 @@ const MoviesCategories = () => {
     useEffect(() => {
         getCategories();
     }, []);
+
+    const location = useLocation();
+    React.useEffect(() => {
+    //    console.log(location.pathname);
+       setIsCategoriesOpen(false);
+    }, [location]);
 
     return (
         <div className='movies_categories-div'>

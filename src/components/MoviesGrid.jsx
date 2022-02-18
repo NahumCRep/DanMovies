@@ -24,7 +24,7 @@ export default function MoviesGrid({ }) {
 
   useEffect(() => {
     setIsLoading(true);
-    const searchUrl = search ? `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=3d9d528c10bd10aab1dcbcd5f1f8f9bf&language=en-US&page=${page}&include_adult=false` + search : "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3d9d528c10bd10aab1dcbcd5f1f8f9bf";
+    const searchUrl = search ? `https://api.themoviedb.org/3/search/movie?query=${search}&api_key=3d9d528c10bd10aab1dcbcd5f1f8f9bf&language=en-US&page=${page}&include_adult=false` + search : `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3d9d528c10bd10aab1dcbcd5f1f8f9bf&page=${page}`;
     fetch(searchUrl)
       .then((result) => result.json())
       .then((data) => {
